@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registros</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    /* =========================== ESTILO GERAL =========================== */
+    body {
+      background-color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* =========================== NAVBAR =========================== */
+    .navbar {
+      background-color: #FFD700 !important;
+    }
+
+    .navbar .nav-link {
+      color: #000 !important;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .navbar .nav-link:hover {
+      color: #006400 !important;
+    }
+
+    /* =========================== TABELA =========================== */
+    main {
+      padding: 40px;
+      text-align: center;
+    }
+
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+
+    thead {
+      background-color: #ffe600;
+      color: white;
+    }
+
+    th, td {
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+
+    tbody tr:hover {
+      background-color: #e6ffe6;
+    }
+
+    /* =========================== BOTÕES =========================== */
+    button {
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #btnAdicionar {
+      background-color: #d81212;
+      margin-top: 20px;
+    }
+
+    #btnAdicionar:hover {
+      background-color: #218838;
+    }
+
+    button.visualizar {
+      background-color: #28a745;
+      margin-right: 5px;
+    }
+
+    button.visualizar:hover {
+      background-color: #218838;
+    }
+
+    button.alterar {
+      background-color: #9e0000;
+    }
+
+    button.alterar:hover {
+      background-color: #004d00;
+    }
+
+    /* =========================== RODAPÉ =========================== */
+    footer {
+      background-color: #DC3545;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Início</a>
+            <!-- LOGO CENTRALIZADA -->
+            <a class="navbar-brand mx-auto d-none d-sm-block" href="menu.html">
+              <img src="logo2.png" alt="Logo Brinquedos Felizes" height="100">
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="registro.html">Registros</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <table id="tabelaBrinquedos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome do Brinquedo</th>
+          <th>Categoria</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+    <button id="btnAdicionar">Adicionar Item</button>
+  </main>
+
+  <script>
+    const brinquedos = [
+      { id: 1, nome: "Bateria de Brinquedo", categoria: "Musical", preco: "R$ 120,00" },
+      { id: 2, nome: "Boneca Princesa", categoria: "Bonecas", preco: "R$ 80,00" },
+      { id: 3, nome: "Lego Star Wars", categoria: "Blocos de Montar", preco: "R$ 250,00" },
+      { id: 4, nome: "Quebra-Cabeça 1000 peças", categoria: "Educativo", preco: "R$ 60,00" },
+      { id: 5, nome: "Urso de Pelúcia", categoria: "Pelúcia", preco: "R$ 90,00" },
+      { id: 6, nome: "Jogo de Tabuleiro", categoria: "Jogos", preco: "R$ 110,00" },
+      { id: 7, nome: "Bola de Futebol", categoria: "Esporte", preco: "R$ 50,00" },
+      { id: 8, nome: "Kit de Pintura", categoria: "Criativo", preco: "R$ 40,00" },
+      { id: 9, nome: "Carrinho Hot Wheels", categoria: "Miniaturas", preco: "R$ 25,00" },
+      { id: 10, nome: "Drone Infantil", categoria: "Tecnologia", preco: "R$ 300,00" }
+    ];
+
+    const tabela = document.querySelector("#tabelaBrinquedos tbody");
+
+    function carregarTabela() {
+      tabela.innerHTML = "";
+      brinquedos.forEach(b => {
+        const linha = document.createElement("tr");
+        linha.innerHTML = `
+          <td>${b.id}</td>
+          <td>${b.nome}</td>
+          <td>${b.categoria}</td>
+          <td>${b.preco}</td>
+          <td>
+            <button class="visualizar" onclick="visualizar(${b.id})">Visualizar</button>
+            <button class="alterar" onclick="alterar(${b.id})">Alterar</button>
+          </td>
+        `;
+        tabela.appendChild(linha);
+      });
+    }
+
+    function visualizar(id) {
+      // Redireciona para a página do brinquedo correspondente (brinquedo1.html, brinquedo2.html, etc.)
+      window.location.href = `brinquedo${id}.html`;
+    }
+
+    function alterar(id) {
+      const brinquedo = brinquedos.find(b => b.id === id);
+
+      const opcao = prompt(
+        `O que você deseja alterar?\n\n1 - Nome\n2 - Categoria\n3 - Preço\n\n(Escolha o número correspondente)`
+      );
+
+      if (opcao === "1") {
+        const novoNome = prompt("Novo nome do brinquedo:", brinquedo.nome);
+        if (novoNome) brinquedo.nome = novoNome;
+
+      } else if (opcao === "2") {
+        const novaCategoria = prompt("Nova categoria:", brinquedo.categoria);
+        if (novaCategoria) brinquedo.categoria = novaCategoria;
+
+      } else if (opcao === "3") {
+        const novoPreco = prompt("Novo preço:", brinquedo.preco);
+        if (novoPreco) brinquedo.preco = novoPreco;
+
+      } else if (opcao !== null) {
+        alert("Opção inválida!");
+      }
+
+      carregarTabela();
+    }
+
+    document.getElementById("btnAdicionar").addEventListener("click", () => {
+      const nome = prompt("Nome do novo brinquedo:");
+      if (!nome) return;
+      const categoria = prompt("Categoria:");
+      const preco = prompt("Preço:");
+      const novo = { id: brinquedos.length + 1, nome, categoria, preco };
+      brinquedos.push(novo);
+      carregarTabela();
+    });
+
+    carregarTabela();
+  </script>
+
+  <footer>
+    <div class="container">
+      <p class="mb-0">© 2025 Menu Nicholas and RAFO. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+

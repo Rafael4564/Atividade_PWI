@@ -10,30 +10,41 @@
 </head>
 <body>
 
-<!--Aqui é a Navbar, ok? -->
-
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-light bg-warning">
   <div class="container-fluid">
+    <!-- Botão do menu responsivo -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
+
+    <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+      <!-- Links à esquerda -->
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="Atividade_PWI/menu.html">Inicio</a>
+          <a class="nav-link text-dark fw-bold" href="menu.html">Início</a>
         </li>
+      </ul>
+
+      <!-- LOGO CENTRALIZADA -->
+      <a class="navbar-brand mx-auto d-none d-sm-block" href="menu.html">
+        <img src="logo2.png" alt="Logo Brinquedos Felizes" height="100">
+      </a>
+
+      <!-- Links à direita -->
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="pages/registro.html">Registros</a>
+          <a class="nav-link text-dark fw-bold" href="registro.html">Registros</a>
         </li>
-       </ul>
+      </ul>
     </div>
   </div>
 </nav>
 
-  <div id="carouselMenu" class="carousel slide mt-4" data-bs-ride="carousel">
-  <div id="carouselMenu" class="carousel slide mt-4" data-bs-ride="carousel">
+
+<!-- Carrossel -->
+<div id="carouselMenu" class="carousel slide mt-4" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <!-- Indicadores para 12 imagens -->
     <button type="button" data-bs-target="#carouselMenu" data-bs-slide-to="0" class="active"></button>
     <button type="button" data-bs-target="#carouselMenu" data-bs-slide-to="1"></button>
     <button type="button" data-bs-target="#carouselMenu" data-bs-slide-to="2"></button>
@@ -44,103 +55,67 @@
     <button type="button" data-bs-target="#carouselMenu" data-bs-slide-to="7"></button>
     <button type="button" data-bs-target="#carouselMenu" data-bs-slide-to="8"></button>
     <button type="button" data-bs-target="#carouselMenu" data-bs-slide-to="9"></button>
-    <button type="button" data-bs-target="#carouselMenu" data-bs-slide-to="10"></button>
   </div>
 
-  <!-- Por favor, arrumar o tamanho do carossel nicholas, nao consegui -->
   <div class="carousel-inner">
-    <!-- Slide 1 -->
     <div class="carousel-item active">
-      <img src="img/brinquedo1.webp" class="d-block w-100" alt="Imagem 1">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo1.webp" class="d-block w-100" alt="Imagem 1">
     </div>
 
-    <!-- Slide 2 -->
     <div class="carousel-item">
-      <img src="img/brinquedo2.webp" class="d-block w-100" alt="Imagem 2">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo2.webp" class="d-block w-100" alt="Imagem 2">
     </div>
 
-    <!-- Slide 3 -->
     <div class="carousel-item">
-      <img src="img/brinquedo3.webp" class="d-block w-100" alt="Imagem 3">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo3.webp" class="d-block w-100" alt="Imagem 3">
     </div>
 
-    <!-- Slide 4 -->
     <div class="carousel-item">
-      <img src="img/brinquedo4.jpg" class="d-block w-100" alt="Imagem 4">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo4.jpg" class="d-block w-100" alt="Imagem 4">
     </div>
 
-    <!-- Slide 5 -->
     <div class="carousel-item">
-      <img src="img/brinquedo5.webp" class="d-block w-100" alt="Imagem 5">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo5.webp" class="d-block w-100" alt="Imagem 5">
     </div>
 
-    <!-- Slide 6 -->
     <div class="carousel-item">
-      <img src="img/brinquedo6.jpeg" class="d-block w-100" alt="Imagem 6">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo7.webp" class="d-block w-100" alt="Imagem 7">
     </div>
 
-    <!-- Slide 7 -->
     <div class="carousel-item">
-      <img src="img/brinquedo7.webp" class="d-block w-100" alt="Imagem 7">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo8.jpg" class="d-block w-100" alt="Imagem 8">
     </div>
 
-    <!-- Slide 8 -->
     <div class="carousel-item">
-      <img src="img/brinquedo8.jpg" class="d-block w-100" alt="Imagem 8">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo9.jpg" class="d-block w-100" alt="Imagem 9">
     </div>
 
-    <!-- Slide 9 -->
     <div class="carousel-item">
-      <img src="img/brinquedo9.jpg" class="d-block w-100" alt="Imagem 9">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
+      <img src="brinquedo10.jpg" class="d-block w-100" alt="Imagem 10">
     </div>
-
-    <!-- Slide 10 -->
-    <div class="carousel-item">
-      <img src="img/brinquedo10.jpg" class="d-block w-100" alt="Imagem 10">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
+  </div>
 
   <!-- Botões de navegação -->
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselMenu" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
+    <span class="carousel-control-prev-icon bg-success rounded-circle"></span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselMenu" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
+    <span class="carousel-control-next-icon bg-success rounded-circle"></span>
   </button>
-</div><br>
-
-<div aling-center>
-  <h3>Brinquedos Felizes!</h3>
-  <h4>Compre brinquedos de forma virtual e os encomende direto para sua casa!</h4>
 </div>
 
-<footer class="bg-light text-black text-center py-4 mt-5">
+<!-- Texto abaixo do carrossel -->
+<div class="text-center mt-4">
+  <h3 class="fw-bold text-success">Brinquedos Felizes!</h3>
+  <h4>Compre brinquedos de forma virtual e receba direto na sua casa!</h4>
+</div>
+
+<!-- Rodapé -->
+<footer class="bg-danger text-white text-center py-4 mt-5">
   <div class="container">
-    <p class="mb-0">© 2025 Menu Nicholas and RAFO. Todos os direitos reservados.</p>
+    <p class="mb-0">© 2025 Brinquedos Felizes - Nicholas e RAFO. Todos os direitos reservados.</p>
   </div>
 </footer>
-
-
-
 
 </body>
 </html>
